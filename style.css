@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #24252a;;
+}
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: black;
+}
+.logo{
+    color: #EDF0F1;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.nav-list{
+   list-style: none;
+}
+
+li,a{
+    text-decoration: none;
+    color: #EDF0F1;
+    font-weight: bold;
+    
+}
+
+.nav-list li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+a.nav{
+    border:none;
+    position: relative;
+}
+
+a.nav::after{
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 2px;
+  left: 50%;
+  bottom:-10px;
+  background-color: white;
+  transition: all ease-in-out .2s;
+}
+
+a.nav:hover::after{
+    width: 100%;
+    left: 0;
+}
+ 
+.donate-button{
+    font-weight: 1000;
+    padding: 9px 25px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(39, 234, 39, 1);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-left: 40px;
+}
+.donate-button:hover{
+    background-color: rgba(39, 234, 39, 0.8);
+    color: white;
+}
+/*     HAMBURGER MENU     */
+label {
+    margin: 0 0 0 0;
+    font-size: 26px;
+    line-height: 70px;
+    color: #EDF0F1;
+    display: none;
+    width: 15px;
+    float: right;
+}
+#toggle {
+    display: none;
+}
+
+@media only screen and (max-width: 660px) {
+    label {
+        display: block;
+        cursor: pointer;
+    }
+   nav{
+       display: flex;
+       align-items: center;
+       
+   }
+    #toggle:checked + .nav-list {
+        display: block;
+    }
+    .nav-list a.nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+    .nav-list {
+        text-align: center;
+        width: 100%;
+        display: none;
+    }
+    .donate-button{
+        display: none;
+    }
+}
